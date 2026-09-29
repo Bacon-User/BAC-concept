@@ -1,2 +1,118 @@
-# BAC-concept
-this is just a concept filled with my ideas
+# Build a City Recode *crazy* concept
+This is just a Concept for a Build a City Recode with lots of new content and many scripts actually more optimized.
+This is also not supposed to be *real*, but just what *could be* if fancy locked in for a ***year*** straight.
+
+## Core functions
+- **Game Structure**
+	- It will no longer all be in workspace. Changes would be:
+		- turned to Modulescript
+		- combined with another script
+		- removed (if unused or uneccessary)
+	- System with Map and BuildFolder may stay.
+	- Day/Night Vote or Mod Vote will have counters INSIDE the script instead of having IntValue objects to count
+- **Bug fixes**
+	- Rotating with Build tool no longer has an offset when doing it quick enough
+	- Votekicks will ban the player for 1 hour even if they leave
+	- "Offline" Bans will be handled a bit differently
+		- Currently: datastore load everytime someone joins to check if they should be banned.
+		- My Idea: datastore load every 60 seconds, check every player playing after every load. check joining players using cached values instead.
+	- Delete Blocks command should work with Player's name even if they have left the game
+	- Remove tool should now get the Player's name from the BuildFolder, or a StringValue inside the BuildFolder instead of a StringValue inside of every block.
+- **Additions or Updates**
+	- Tools
+		- **Old Tools:**
+		- Build tool will get an updated UI
+		- Remove tool can stay lwk
+		- Paint tool will get an updated UI
+		- Wire tool should get updated entirely
+		- Orb should also get updated to support horizontal transportation, incase of spawn traps.
+			- also add an indicator where you would end up after teleporting
+		- **New Tools:**
+		- Material Tool
+			- Changes the Material of the block to for example Metal or Glass.
+		- Shape Tool
+			- Changes the Shape of the block to for example Wedge or Sphere.
+		- Scale Tool
+			- Modifies the Size of the block to a max *volume* of 9 blocks (or 243 studs)
+	- Wiring
+		- New property types:
+			- String
+			- Number (with decimals)
+			- BrickColor
+			- Color3
+			- Vector3
+		- Updates to set property:
+			- You can edit the value by clicking on it and putting text in that represents that value type.
+			- Custom min/max values (for Vector3, Number and Integer)
+			- Custom increment values (for Vector3, Number and Iteger)
+		- Clear Selection button
+		- update properties of multiple selections at once
+	- Saving
+		- Save Names only save changes (prevents censoring of old names)
+		- 3D Preview?
+			- A space far away from the map, where the save is loaded locally and the camera spins around the model.
+		- Share feature (generates a Unique code)
+			- Update feature (to update the model for *that* code)
+		- Import feature
+			- Loads a save from a Unique code into a save slot
+			- Importing from studio maybe?
+		- Export feature
+			- Exports your save file in a format that a Retrostudio and/or Roblox Studio plugin understands and can Import into workspace.
+	- Day/Night voting
+		- toggleable
+		- Night and Day can be forced locally in Settings
+		- A Wireable block can change this too, if hooked up to a button.
+	- Mod tools
+		- Votes made by Mods/Devs
+			- hideable locally in Settings
+			- can only be done once every 10 minutes (per mod)
+				- prevents spamming
+		- Announcement
+			- bigger
+			- shows up above Day/Night votes and Mod votes
+			- hideable locally in Settings
+		- Delete Blocks
+			- can take Username when the player is not in the game
+		- Ban Player
+			- has a *time* parameter
+				- a Textbox where *d* is day, *h* is hour and *m* is months
+				- for example: "1d" -> 1 day ban; "5h" -> 5 hour ban; "12m" -> 12 months/1 year ban
+				- if left empty or value is negative
+					- permament ban
+			- if ban is shorter than 1 day
+				- you can still play in solo?
+		- Kick Player
+			- has the same effects as votekicking a player
+				- 1 hour ban
+		- *new* Reload Place (dev)
+			- putting it in mod menu rather than being a chat command
+			- Makes everyone in the game join a new server forcefully
+			- *experimental* toggle to save builds and carry over to the new server?
+				- adds a notification for a player that joined the game while listed in the datastore
+					- "It seems the server was restarted and you might've not saved your builds. Would you like to load the latest build you had in the server?"
+						- Yes --- No
+					- Shows up in the middle of the screen
+				- saves all builds only for 2 minutes, then clears them from datastores.
+		- *new* global Announcement (dev)
+			- sends an announcement through every server, including solo servers.
+		- *new* disable save cooldown
+			- a toggle to disable save cooldown in public servers
+			- possibly resets after 5 minutes?
+			- could be useful for server resets?
+	- Solo server Admin
+		- gain **some** mod tools in solo servers
+			- force day/night vote
+			- delete blocks
+			- kick player
+			- announcement
+			- whitelist player
+		- gain **some** dev commands in solo servers
+			- networkParts
+			- reloadPlace
+				- behaves different
+				- sends every player in the server to a new solo server
+			- blockFly
+
+## Again this is just a ***Concept***
+This is just my Ideas alone packed neatly inside a document file.
+You will probably have better Ideas, so feel free to download the file and add your own Ideas to the list.
